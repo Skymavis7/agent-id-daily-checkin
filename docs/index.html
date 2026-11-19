@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent ID Daily Check-in</title>
+  <meta name="description" content="Daily check-in for Binance Agent ID holders on BNB Chain. Free except gas. One check-in per UTC day." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Agent ID Daily Check-in</h1>
+      <p class="subtitle">
+        A daily check-in for holders of a Binance Agent ID on BNB Chain.
+        Checking in is free except for gas. Only Agent ID holders can check in,
+        and only once per UTC day. No rewards, no earnings — just your streak.
+      </p>
+    </header>
+
+    <section class="card" id="wallet-card">
+      <h2>Wallet</h2>
+      <p id="wallet-status">Not connected.</p>
+      <p id="wallet-address" class="mono hidden"></p>
+      <div class="row">
+        <button id="connect-btn" type="button">Connect Wallet</button>
+        <button id="switch-network-btn" type="button" class="hidden secondary">Switch to BNB Chain</button>
+      </div>
+      <p id="network-warning" class="warning hidden">
+        Your wallet is not on BNB Chain mainnet (chain 56).
+        Please switch networks to check in.
+      </p>
+      <p id="agent-id-status" class="hidden"></p>
+    </section>
+
+    <section class="card" id="checkin-card">
+      <h2>Today</h2>
+      <p>Current UTC day: <strong id="utc-day" class="mono">—</strong></p>
+      <p>Next UTC day in: <strong id="countdown" class="mono">—</strong></p>
+      <p id="contract-status" class="muted">Contract status: loading…</p>
+      <div class="stats">
+        <div class="stat"><span class="stat-value" id="stat-streak">—</span><span class="stat-label">Day streak</span></div>
+        <div class="stat"><span class="stat-value" id="stat-total">—</span><span class="stat-label">Total check-ins</span></div>
+        <div class="stat"><span class="stat-value" id="stat-last">—</span><span class="stat-label">Last check-in day (UTC)</span></div>
+      </div>
+      <button id="checkin-btn" type="button" disabled>Check In</button>
+      <p id="checkin-reason" class="muted">Connect your wallet to check in.</p>
+      <p id="tx-status" class="mono hidden"></p>
+    </section>
+
+    <section class="card" id="leaderboard-card">
+      <h2>Leaderboard — Top 10</h2>
+      <p class="muted">Ranked by longest streak, then by total check-ins. Built from on-chain CheckedIn events.</p>
+      <p id="leaderboard-status" class="muted">Loading…</p>
+      <ol id="leaderboard" class="leaderboard"></ol>
+    </section>
+
+    <footer>
+      <p class="muted">
+        Agent ID contract: <span class="mono">0x60b9262456de011f7d15a54cdd8c48baaa8b022f</span><br />
+        Check-in contract: <span class="mono" id="footer-contract">not deployed yet</span><br />
+        This is a community project for the Binance Agent ID Hackathon. It is not affiliated with Binance.
+      </p>
+    </footer>
+  </main>
+
+  <script src="vendor/ethers.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

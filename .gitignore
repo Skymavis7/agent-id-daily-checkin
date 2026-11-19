@@ -1,0 +1,19 @@
+# Foundry
+out/
+cache/
+broadcast/
+*.log
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets (never commit keys)
+.env
+.env.*
+*.key
+*.pem
+keystore/
