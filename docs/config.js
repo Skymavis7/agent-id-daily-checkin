@@ -12,11 +12,9 @@
 // ============================================================
 
 const CONFIG = {
-  // TODO (coordinator): paste the deployed contract address here.
-  CONTRACT_ADDRESS: "0x0000000000000000000000000000000000000000",
+  CONTRACT_ADDRESS: "0x1B1a24D9c111e620bF72BC7888B4Cbc781F492f7",
 
-  // TODO (coordinator): paste the deployment block number here.
-  DEPLOY_BLOCK: 0,
+  DEPLOY_BLOCK: 134448379,
 
   // BSC mainnet chain id (do not change).
   CHAIN_ID: 56,
